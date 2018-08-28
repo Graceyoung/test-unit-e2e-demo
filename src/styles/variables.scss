@@ -1,0 +1,36 @@
+html{
+  font-size: 62.5%;
+}
+//sidebar
+$sideBarWidth: 15.5rem;
+$menuBg: #222222;
+$subMenuBg: #1f2d3d;
+$menuHover: #001528;
+
+/*主题色*/
+$themeColor: #d5001c;
+$themeYellow: #f5ab00;
+$themeBlue: #498ee4;
+
+/*常用字体颜色*/
+$fontMainColor: #333;
+$fontComColor: #666;
+$fontSubColor: #999;
+
+/*常用字体大小*/
+$fontSizeGradeAA: 3.9rem; //约为设计稿80px
+$fontSizeGradeSupA: 2.1rem; //约为设计稿42px
+$fontSizeGradeA: 1.8rem; //约为设计稿36px
+$fontSizeGradeAB: 1.7rem; //约为设计稿34px
+$fontSizeGradeB: 1.6rem; //约为设计稿32px
+$fontSizeGradeC: 1.5rem; //约为设计稿30px
+$fontSizeGradeD: 1.4rem; //约为设计稿28px
+$fontSizeGradeE: 1.3rem; //约为设计稿26px
+$fontSizeGradeF: 1.2rem; //约为设计稿24px
+$fontSizeGradeG: 1.1rem; //约为设计稿22px
+$fontSizeGradeH: 1rem; //约为设计稿20px
+
+/*px转rem函数*/
+@function px2rem($px) {
+  @return $px / 2048 * 100rem;
+}
