@@ -1,7 +1,5 @@
 <template>
     <div id="login" ref="login" class="login-container column">
-      <a id="baidu" href="https://www.baidu.com" target="_blank">baidu.com</a>
-
       <div class="login-form">
             <div class="login-form-item row">
 				<span class="ico-wrap row">
@@ -53,7 +51,6 @@
     import {isvalidUsername, isvalidPwd} from '../utils/validate'
     import registList from './components/registList.vue'
     // import {Message} from 'element-ui'
-    import {mapState} from 'vuex';
 
     export default {
         name: 'list',

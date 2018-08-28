@@ -19,7 +19,7 @@ module.exports = {
     // 一系列传递给 selenium 的命令行参数
     cli_args: {
       // Nightwatch 在 Chrome 上运行测试,ChromeDriver 路径
-      'webdriver.chrome.driver': require('chromedriver').path
+      'webdriver.chrome.driver': require('chromedriver').path,
     }
   },
 
@@ -43,7 +43,7 @@ module.exports = {
         acceptSslCerts: true,
         chromeOptions: {
           // 配置模拟的设备
-          // mobileEmulation: {'deviceName': 'iPhone X'}
+          mobileEmulation: {'deviceName': 'iPad'}
         }
       }
     },
@@ -52,7 +52,10 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'firefox',
         javascriptEnabled: true,
-        acceptSslCerts: true
+        acceptSslCerts: true,
+        FirefoxProfile: {
+
+        }
       }
     }
   }

@@ -41,8 +41,17 @@ module.exports = {
       .assert.elementPresent('input[name="password"]')
       .setValue('input[name="password"]', '12345')
       .pause(3000)
+
       // 点击注册
-      .click('.regist-btn')
+      // .click('.regist-btn')
+      // 解决移动端click不兼容问题
+      .waitForElementVisible('.regist-btn', 1000)
+      .execute(selector => {
+        document.querySelector(selector).click();
+      }, ['.regist-btn'])
+      .moveToElement('.regist-btn', 0, 0)
+      .mouseButtonClick(0)
+
       .pause(1000)
       .assert.visible('.register-wrap') // 可见
       .pause(1000)
@@ -57,7 +66,13 @@ module.exports = {
       .setValue('.regist-container .el-form .el-form-item:nth-child(4) .el-input__inner', '1234567')
       .pause(1000)
       // 点击注册中取消按钮
-      .click('.cancel-btn')
+      // .click('.cancel-btn')
+      .execute(selector => {
+        document.querySelector(selector).click();
+      }, ['.cancel-btn'])
+      .moveToElement('.cancel-btn', 0, 0)
+      .mouseButtonClick(0)
+
       .pause(1000)
       .assert.hidden('.register-wrap')
       .pause(5000)

@@ -45,6 +45,14 @@ selenium：自动化测试环境，它提供了测试服务器、启动浏览器
           selenium是一个.jar后缀的文件，需要有java的运行环境，java -version查看是否按照Java
           官网：http://www.selenium.org.cn/
 
-# e2e测试存在的问题
-nightwatch.conf.js中配置Chrome模拟移动设备，测试用例（test/e2e/specs/test.js）中的click失效
+# nightwatch.conf.js中配置Chrome模拟移动设备，测试用例（test/e2e/specs/test.js）中的click失效,解决方案
+.waitForElementVisible('.regist-btn', 1000)
+
+.execute(selector => {
+  document.querySelector(selector).click();
+}, ['.regist-btn'])
+
+.moveToElement('.regist-btn', 0, 0)
+
+.mouseButtonClick(0)
 
