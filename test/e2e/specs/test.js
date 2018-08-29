@@ -2,7 +2,7 @@
 // http://nightwatchjs.org/guide#usage
 
 module.exports = {
-  'default e2e tests': function (browser) {
+  '测试登录字段': function (browser) {
     // automatically uses dev Server port from /config.index.js
     // default: http://localhost:8080
     // see nightwatch.conf.js
@@ -10,7 +10,13 @@ module.exports = {
 
     browser
       .url(devServer)
-      .waitForElementVisible('#app', 5000) // 等待5000ms，该元素可见
+      .waitForElementVisible('#app', 3000) // 等待3000ms，该元素可见
+      .pause(1000)
+      // LANDSCAPE|PORTRAIT
+      /*.setOrientation('LANDSCAPE',function (obj) {
+        this.assert.equal(obj.orientation,'LANDSCAPE');
+      })
+      .pause(1000)*/
       // 测试登录中用户名字段
       .assert.elementPresent('input[name="username"]') // 该element存在于DOM中
       .clearValue('input[name="username"]') // 清除input的值
@@ -41,10 +47,12 @@ module.exports = {
       .assert.elementPresent('input[name="password"]')
       .setValue('input[name="password"]', '12345')
       .pause(3000)
-
-      // 点击注册
-      // .click('.regist-btn')
-      // 解决移动端click不兼容问题
+  },
+  '测试注册字段': function (browser) {
+    // 点击注册
+    // .click('.regist-btn')
+    // 解决移动端click不兼容问题
+    browser
       .waitForElementVisible('.regist-btn', 1000)
       .execute(selector => {
         document.querySelector(selector).click();
@@ -75,7 +83,7 @@ module.exports = {
 
       .pause(1000)
       .assert.hidden('.register-wrap')
-      .pause(5000)
+      .pause(3000)
       .end()
   }
 }

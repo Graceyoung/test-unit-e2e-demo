@@ -4,7 +4,7 @@ var config = require('../../config')
 // http://nightwatchjs.org/gettingstarted#settings-file
 module.exports = {
   // 测试代码目录
-  src_folders: ['test/e2e/specs'],
+  src_folders: ['test/e2e/specs/'],
   // 测试报告输出
   output_folder: 'test/e2e/reports',
   // 自定义断言路径
@@ -43,18 +43,9 @@ module.exports = {
         acceptSslCerts: true,
         chromeOptions: {
           // 配置模拟的设备
-          mobileEmulation: {'deviceName': 'iPad'}
-        }
-      }
-    },
-
-    firefox: {
-      desiredCapabilities: {
-        browserName: 'firefox',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-        FirefoxProfile: {
-
+          mobileEmulation: {
+            'deviceName': 'iPad'
+          }
         }
       }
     }
