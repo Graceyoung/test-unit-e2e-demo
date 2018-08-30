@@ -32,6 +32,7 @@ module.exports = {
       // 测试代码中可访问的全局变量
       globals: {
         devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
+        // 'deviceMetrics': {'width': 1024, 'height': 768, 'pixelRatio': 2.0}
       }
     },
 
