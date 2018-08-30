@@ -32,7 +32,6 @@ module.exports = {
       // 测试代码中可访问的全局变量
       globals: {
         devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
-        // 'deviceMetrics': {'width': 1024, 'height': 768, 'pixelRatio': 2.0}
       }
     },
 
@@ -46,6 +45,8 @@ module.exports = {
           // 配置模拟的设备
           mobileEmulation: {
             'deviceName': 'iPad'
+            // ipad在pc浏览器无法设置横屏，只能通过以下方式设置宽高等
+            // 'deviceMetrics': {'width': 1024, 'height': 768, 'pixelRatio': 2.0}
           }
         }
       }
